@@ -237,7 +237,7 @@ static inline int send_packet(packet_descriptor_t* pd, int thr_idx)
 		uint16_t buf_id = buf->len;
 		buf->pkt[buf_id] = *(odp_packet_t *)pd->wrapper;
 		buf->len++;
-		sigg("[Unicast] recvd port id - %d, sent port id - %d\n", odp_packet_input_index(*((odp_packet_t *)pd->wrapper)), port);
+		sigg("[Unicast] \x1b[92m recvd port id - %d, sent port id - %d\n\x1b[39m", odp_packet_input_index(*((odp_packet_t *)pd->wrapper)), port);
 	}
 	return 0;
 }
