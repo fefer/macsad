@@ -14,7 +14,7 @@ Note: In this tutorial we are going to install the MACSAD at `/root` folder.
 To install MACSAD and it dependencies you can run our script (and skip to Part 3):
 
 - `cd /root/`
-- `./mac/install.sh`
+- `./macsad/install.sh`
 
 Or you can follow the next steps. We strongly suggest to run our `install_pkgs.sh`.
 
@@ -50,8 +50,8 @@ MACSAD uses ODP for forwarding plane developement. Fist of all, we need to creat
 1. To run MACSAD we need P4-hlir submodule. Thus, At this step, we will clone MACSAD project and update/install the submodule. 
 
 - `sudo apt-get install -y libpcap-dev python-scapy python-yaml graphviz python-setuptools`
-- `git clone --recursive https://github.com/intrig-unicamp/mac.git`
-- `cd mac`
+- `git clone --recursive https://github.com/intrig-unicamp/macsad.git`
+- `cd macsad`
 - `cd p4-hlir`
 - `python setup.py install`
 - `cd ..`

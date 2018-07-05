@@ -24,19 +24,19 @@
 #ifdef NDEBUG
 #define debug(args, ...)
 #else
-#define debug(args, ...) fprintf(stderr, "[DEBUG] %s:%d " args "\n", __FILE__, __LINE__, ##__VA_ARGS__)
+#define debug(args, ...) fprintf(stderr, "[DEBUG] \x1b[35m %s:%d " args "\n \x1b[39m", __FILE__, __LINE__, ##__VA_ARGS__)
 #endif
 
 #ifdef NINFO
 #define info(args, ...)
 #else
-#define info(args, ...) fprintf(stderr, "[INFO] %s:%d " args "\n", __FILE__, __LINE__, ##__VA_ARGS__)
+#define info(args, ...) fprintf(stderr, "[INFO] \x1b[34m %s:%d " args "\n \x1b[39m", __FILE__, __LINE__, ##__VA_ARGS__)
 #endif
 
 #ifdef NSIGG
 #define sigg(args, ...)
 #else
-#define sigg(args, ...) fprintf(stdout, args "\n", ##__VA_ARGS__)
+#define sigg(args, ...) fprintf(stdout, args "\n x1b[39m", ##__VA_ARGS__)
 #endif
 
 //=============================================================================

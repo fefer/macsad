@@ -36,8 +36,8 @@ of the ODP build directory before running any of these commands):
 
 1. Clone the MACSAD project:
 
-        git clone --recursive https://github.com/intrig-unicamp/mac.git
-        cd mac
+        git clone --recursive https://github.com/intrig-unicamp/macsad.git
+        cd macsad
 	
 2. MACSAD has added `P4-hlir` as a submodule. Download/update and then install
 it (along with its dependencies):

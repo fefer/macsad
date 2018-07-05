@@ -28,7 +28,7 @@ void add_header(packet_descriptor_t* p, header_instance_t hdr_prefix)
 				.length = len
 			};
 	} else {
-		debug("Cannot add a header instance already present in the packet\n");
+		debug("\x1b[31m Cannot add a header instance already present in the packet\n \x1b[39m");
 	}
 }
 
@@ -36,7 +36,7 @@ void remove_header(packet_descriptor_t* p, header_instance_t hdr_prefix)
 {
 	debug("calling remove_header \n");
 	if(p->headers[hdr_prefix].pointer == NULL) {
-		printf("Cannot remove a header instance not present in the packet\n");
+		printf("\x1b[31m Cannot remove a header instance not present in the packet\n \x1b[39m");
 	}
 	else {
 		uint16_t len = header_instance_byte_width[hdr_prefix];
@@ -57,13 +57,13 @@ void copy_header(packet_descriptor_t* p, header_instance_t dhdr_prefix, header_i
 	debug("calling copy_header \n");
 
 	if((p->headers[dhdr_prefix].pointer == NULL) || (p->headers[dhdr_prefix].pointer == NULL)) {
-		printf("copy_header failed with invalid hdr instance\n");
+		printf("\x1b[31m copy_header failed with invalid hdr instance\n \x1b[39m");
 	}
 	else {
 		dlen = header_instance_byte_width[dhdr_prefix];
 		slen = header_instance_byte_width[shdr_prefix];
 		if (dlen!=slen) {
-			debug("copy_header failed with mismatch hdr lenght\n");
+			debug("\x1b[31m copy_header failed with mismatch hdr lenght\n \x1b[39m");
 		}
 		//int result = odp_packet_copy_data(*((odp_packet_t *)(p->wrapper)), 0, 1, len);
 		info("copying %d bytes from hdr_instance %d to %d \n", slen, shdr_prefix, dhdr_prefix);
